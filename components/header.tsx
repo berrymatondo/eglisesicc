@@ -11,6 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useState } from "react";
+import Image from "next/image";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -28,9 +29,15 @@ export function Header() {
           href="/"
           className="flex items-center gap-2 font-semibold text-lg"
         >
-          <Globe className="h-6 w-6" />
+          {/*           <Image
+            src={"/LOGO-GRIS.png"}
+            alt="logo ICC"
+            width={8}
+            height={8}
+            className="object-cover w-full h-full"
+          /> */}
           <span className="hidden sm:inline-block">Eglises ICC</span>
-          <span className="sm:hidden">ICC</span>
+          <span className="sm:hidden">Eglises ICC</span>
         </Link>
 
         {/* Desktop Navigation */}

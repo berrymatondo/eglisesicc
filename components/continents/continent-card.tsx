@@ -17,7 +17,7 @@ export function ContinentCard({ continent }: ContinentCardProps) {
 
   return (
     <Link href={`/pays/${continentSlug}`}>
-      <Card className="p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+      <Card className=" mb-2 p-4 hover:bg-accent/50 transition-colors cursor-pointer">
         <div className="flex items-center gap-4">
           {/* Icon */}
           <div

@@ -11,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ContinentCard } from "./continent-card";
+import { useRouter } from "next/navigation";
 /* import { ChurchDistributionChart } from "@/components/church-distribution-chart";
 import { CountryDistributionChart } from "@/components/country-distribution-chart"; */
 
@@ -68,6 +69,7 @@ const continentsData: Continent[] = [
 
 export function ContinentsList() {
   const [sortBy, setSortBy] = useState("countries");
+  const router = useRouter();
 
   const sortedContinents = [...continentsData].sort((a, b) => {
     if (sortBy === "countries") {
@@ -83,7 +85,12 @@ export function ContinentsList() {
       {/* Header */}
       <header className="sticky top-0 z-10 bg-background border-b border-border">
         <div className="flex items-center gap-4 px-4 py-4">
-          <Button variant="ghost" size="icon" className="shrink-0">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="shrink-0"
+            onClick={() => router.back()}
+          >
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <h1 className="text-xl font-semibold text-foreground">Continents</h1>
