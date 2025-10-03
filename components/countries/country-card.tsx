@@ -1,33 +1,38 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { Card } from "@/components/ui/card"
-import type { Country } from "@/components/countries-page"
-import Image from "next/image"
-import Link from "next/link"
-import { Pencil, Trash2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card";
+import Image from "next/image";
+import Link from "next/link";
+import { Pencil, Trash2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Country } from "./countries-page";
 
 interface CountryCardProps {
-  country: Country
-  continent: string
-  onEdit?: (country: Country) => void
-  onDelete?: (country: Country) => void
+  country: Country;
+  continent: string;
+  onEdit?: (country: Country) => void;
+  onDelete?: (country: Country) => void;
 }
 
-export function CountryCard({ country, continent, onEdit, onDelete }: CountryCardProps) {
+export function CountryCard({
+  country,
+  continent,
+  onEdit,
+  onDelete,
+}: CountryCardProps) {
   const handleEdit = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    onEdit?.(country)
-  }
+    e.preventDefault();
+    e.stopPropagation();
+    onEdit?.(country);
+  };
 
   const handleDelete = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    onDelete?.(country)
-  }
+    e.preventDefault();
+    e.stopPropagation();
+    onDelete?.(country);
+  };
 
   return (
     <Link href={`/villes/${continent}/${country.id}`}>
@@ -46,7 +51,9 @@ export function CountryCard({ country, continent, onEdit, onDelete }: CountryCar
 
           {/* Content */}
           <div className="flex-1 min-w-0">
-            <h3 className="text-base font-semibold text-foreground mb-1">{country.name}</h3>
+            <h3 className="text-base font-semibold text-foreground mb-1">
+              {country.name}
+            </h3>
             <p className="text-sm text-muted-foreground">
               {country.cities} Villes, {country.churches} Églises
             </p>
@@ -73,5 +80,5 @@ export function CountryCard({ country, continent, onEdit, onDelete }: CountryCar
         </div>
       </Card>
     </Link>
-  )
+  );
 }

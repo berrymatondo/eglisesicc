@@ -2,7 +2,7 @@
 
 import { Bar, BarChart, XAxis, YAxis, ResponsiveContainer } from "recharts"
 import { Card } from "@/components/ui/card"
-import type { Continent } from "@/components/continents-page"
+import { Continent } from "../continents/continentsList"
 
 interface CountryDistributionChartProps {
   continents: Continent[]
