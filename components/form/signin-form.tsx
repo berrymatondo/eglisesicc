@@ -47,7 +47,7 @@ export default function SigninForm() {
       },
       {
         onSuccess: () => {
-          router.push("/auth");
+          router.push("/continents");
           router.refresh();
         },
         onError: (error) => {

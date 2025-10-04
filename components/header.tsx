@@ -12,15 +12,30 @@ import {
 } from "@/components/ui/sheet";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
 
-export function Header() {
+type HeaderProps = {
+  user: any;
+};
+export function HeaderClient({ user }: HeaderProps) {
   const [open, setOpen] = useState(false);
-  /*   const router = useRouter();
-   */
+  //  const [user, setUser] = useState<any | undefined>(undefined);
+  const router = useRouter();
+
   const navigationLinks = [
     { href: "/continents", label: "Continents" },
     { href: "/groupes", label: "Groupes" },
   ];
+
+  /*   useEffect(() => {
+    const fetchSession = async () => {
+      const sessionUser = await authClient.getSession(); // ✅ direct server action
+      setUser(sessionUser?.data?.user);
+      //console.log("user in header:", sessionUser?.data?.user);
+    };
+
+    fetchSession();
+  }, []); */
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -72,14 +87,51 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-lg font-medium transition-colors hover:text-primary py-2"
+                  className="px-4 text-lg font-medium transition-colors hover:text-primary py-2"
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link href="/auth/signup" onClick={() => setOpen(false)}>
-                Sign up
-              </Link>
+              {!user && (
+                <Link
+                  className="px-4 py-2 text-lg font-medium"
+                  href="/auth/signup"
+                  onClick={() => setOpen(false)}
+                >
+                  S'enregistrer
+                </Link>
+              )}
+
+              {!user && (
+                <Link
+                  className="px-4 py-2 text-lg font-medium"
+                  href="/auth/signin"
+                  onClick={() => setOpen(false)}
+                >
+                  Se Connecter
+                </Link>
+              )}
+
+              {user && (
+                <div
+                  className="px-4 py-2 text-lg font-medium text-red-600 hover:cursor-pointer"
+                  onClick={async () => {
+                    setOpen(false);
+                    await authClient.signOut();
+                    router.replace("/");
+                    router.refresh();
+                    // window.location.href = "/";
+                    /*                     await authClient.signOut({
+                      // redirect yourself after a successful logout:
+                      fetchOptions: {
+                        onSuccess: () => router.replace("/"),
+                      },
+                    }); */
+                  }}
+                >
+                  Se Déconnecter
+                </div>
+              )}
               {/*               <Button
                 onClick={() => {
                   setOpen(false);

@@ -41,7 +41,7 @@ export default function SignupForm() {
   async function onSubmit(values: z.infer<typeof signupFormSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
+    //console.log(values);
     await signUp.email(
       {
         email: values.email,
@@ -50,7 +50,7 @@ export default function SignupForm() {
       },
       {
         onSuccess: () => {
-          router.push("/auth");
+          router.push("/auth/signin");
           router.refresh();
         },
         onError: (error) => {

@@ -1,10 +1,10 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { getUSer } from "@/lib/auth-server";
+import { getUser } from "@/lib/auth-server";
 import { unauthorized } from "next/navigation";
 import React from "react";
 
 const AuthPage = async () => {
-  const user = await getUSer();
+  const user = await getUser();
 
   if (!user) {
     return unauthorized();
