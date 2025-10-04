@@ -5,6 +5,7 @@ import { nextCookies } from "better-auth/next-js";
 // If your Prisma file is located elsewhere, you can change the path
 
 export const auth = betterAuth({
+  secret: process.env.BETTER_AUTH_SECRET!,
   database: prismaAdapter(prisma, {
     provider: "postgresql", // or "mysql", "postgresql", ...etc
   }),
