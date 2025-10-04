@@ -11,11 +11,12 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useState } from "react";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export function Header() {
   const [open, setOpen] = useState(false);
-
+  /*   const router = useRouter();
+   */
   const navigationLinks = [
     { href: "/continents", label: "Continents" },
     { href: "/groupes", label: "Groupes" },
@@ -76,6 +77,17 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
+              <Link href="/auth/signup" onClick={() => setOpen(false)}>
+                Sign up
+              </Link>
+              {/*               <Button
+                onClick={() => {
+                  setOpen(false);
+                  router.push("/auth/signup");
+                }}
+              >
+                Sign up
+              </Button> */}
             </nav>
           </SheetContent>
         </Sheet>
