@@ -41,9 +41,9 @@ export function DepartmentCard({
 
   return (
     <Link
-      href={`/departement/${continent}/${country}/${city}/${church}/${department.id}`}
+      href={`/continents/${continent}/countries/${country}/cities/${city}/churches/${church}/departments/${department.id}`}
     >
-      <Card className="p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+      <Card className="mb-2 p-4 hover:bg-accent/50 transition-colors cursor-pointer">
         <div className="flex items-center gap-4">
           {/* Icon Placeholder */}
           <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center shrink-0">

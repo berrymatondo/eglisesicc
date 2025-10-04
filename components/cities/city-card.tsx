@@ -36,8 +36,10 @@ export function CityCard({
   };
 
   return (
-    <Link href={`/eglises/${continent}/${country}/${city.id}`}>
-      <Card className="p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+    <Link
+      href={`/continents/${continent}/countries/${country}/cities/${city.id}`}
+    >
+      <Card className="mb-2 p-4 hover:bg-accent/50 transition-colors cursor-pointer">
         <div className="flex items-start gap-4">
           {/* Location Icon */}
           <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
@@ -45,15 +47,21 @@ export function CityCard({
           </div>
 
           {/* Content */}
-          <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between mb-3">
+          <div className="flex-1 min-w-0 ">
+            <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
                 <h3 className="text-lg font-semibold text-foreground mb-1">
                   {city.name}
                 </h3>
                 <p className="text-sm text-muted-foreground">{city.country}</p>
               </div>
-              <div className="flex items-center gap-2 shrink-0 ml-2">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground mb-1">
+                  {city.churches}
+                </div>
+                <div className="text-sm text-muted-foreground">Églises</div>
+              </div>
+              {/*               <div className="flex items-center gap-2 shrink-0 ml-2">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -71,25 +79,44 @@ export function CityCard({
                   <Trash2 className="h-4 w-4" />
                 </Button>
                 <ShoppingBag className="w-5 h-5 text-red-500" />
-              </div>
+              </div> */}
             </div>
 
             {/* Stats */}
-            <div className="flex items-center gap-8">
-              <div className="text-center">
+            <div className="flex  items-end gap-8">
+              {/*               <div className="text-center">
                 <div className="text-2xl font-bold text-foreground mb-1">
                   {city.churches}
                 </div>
                 <div className="text-sm text-muted-foreground">Églises</div>
+              </div> */}
+
+              <div className="w-full flex justify-end items-center gap-2 shrink-0 ml-2">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={handleEdit}
+                  className="h-8 w-8 text-muted-foreground hover:text-foreground"
+                >
+                  <Pencil className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={handleDelete}
+                  className="h-8 w-8 text-red-500 hover:text-destructive"
+                >
+                  <Trash2 className="h-4 w-4" />
+                </Button>
               </div>
-              <div className="text-center">
+              {/*               <div className="text-center">
                 <div className="text-2xl font-bold text-foreground mb-1">
                   {city.departments}
                 </div>
                 <div className="text-sm text-muted-foreground">
                   Départements
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

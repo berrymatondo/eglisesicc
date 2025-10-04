@@ -193,14 +193,18 @@ export function DepartmentsPage({
     <div className="min-h-screen bg-background pb-24">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-background border-b border-border">
-        <div className="flex items-center justify-center h-14 px-4 relative">
-          <button
+        <div className="flex items-center gap-4 px-4 py-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="shrink-0"
             onClick={() => router.back()}
-            className="absolute left-4 p-2 hover:bg-accent rounded-full transition-colors"
           >
-            <ArrowLeft className="h-5 w-5" />
-          </button>
-          <h1 className="text-xl font-semibold">Départements</h1>
+            <ArrowLeft className="h-6 w-6" />
+          </Button>
+          <h1 className="text-xl font-semibold text-foreground">
+            Départements
+          </h1>
         </div>
       </header>
 

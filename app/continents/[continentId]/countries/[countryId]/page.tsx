@@ -3,9 +3,10 @@ import { CitiesPage } from "@/components/cities/cities-page";
 export default async function CountryPage({
   params,
 }: {
-  params: Promise<{ continent: string; countryId: string }>;
+  params: Promise<{ continentId: string; countryId: string }>;
 }) {
-  const { continent } = await params;
+  const { continentId } = await params;
   const { countryId } = await params;
-  return <CitiesPage continent={continent} country={countryId} />;
+
+  return <CitiesPage continent={continentId} country={countryId} />;
 }

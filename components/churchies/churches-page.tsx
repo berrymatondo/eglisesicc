@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronLeft, Plus, Search } from "lucide-react";
+import { ArrowLeft, ChevronLeft, Plus, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Label } from "@/components/ui/label";
 import { ChurchCard } from "./church-card";
+import { useRouter } from "next/navigation";
 
 export interface Church {
   id: string;
@@ -43,6 +44,7 @@ interface ChurchesPageProps {
 }
 
 export function ChurchesPage({ continent, country, city }: ChurchesPageProps) {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
@@ -190,15 +192,16 @@ export function ChurchesPage({ continent, country, city }: ChurchesPageProps) {
     <div className="min-h-screen bg-background pb-24">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-background border-b border-border">
-        <div className="flex items-center gap-4 p-4">
-          <Link href={`/villes/${continent}/${country}`}>
-            <Button variant="ghost" size="icon">
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-          </Link>
-          <h1 className="text-2xl font-bold flex-1 text-center mr-10">
-            Églises
-          </h1>
+        <div className="flex items-center gap-4 px-4 py-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="shrink-0"
+            onClick={() => router.back()}
+          >
+            <ArrowLeft className="h-6 w-6" />
+          </Button>
+          <h1 className="text-xl font-semibold text-foreground">Eglises</h1>
         </div>
       </header>
 

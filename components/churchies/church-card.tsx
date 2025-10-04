@@ -38,8 +38,10 @@ export function ChurchCard({
   };
 
   return (
-    <Link href={`/departements/${continent}/${country}/${city}/${church.id}`}>
-      <Card className="p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+    <Link
+      href={`/continents/${continent}/countries/${country}/cities/${city}/churches/${church.id}`}
+    >
+      <Card className="mb-2 p-4 hover:bg-accent/50 transition-colors cursor-pointer">
         <div className="flex flex-col sm:flex-row gap-4">
           {/* Header with Image and Action Buttons */}
           <div className="flex gap-3 sm:gap-4">

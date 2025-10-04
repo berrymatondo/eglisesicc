@@ -38,7 +38,7 @@ export function CountryCard({
     /*     <Link href={`/villes/${continent}/${country.id}`}>
 <Link href={`/continents/${continentSlug}`}>
  */ <Link href={`/continents/${continent}/countries/${country.id}`}>
-      <Card className="p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+      <Card className="mb-2 p-4 hover:bg-accent/50 transition-colors cursor-pointer">
         <div className="flex items-center gap-4">
           {/* Flag Icon */}
           <div className="w-14 h-14 rounded-full overflow-hidden shrink-0 border border-border">

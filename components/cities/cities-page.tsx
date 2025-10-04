@@ -394,6 +394,8 @@ const citiesData: Record<string, City[]> = {
 };
 
 export function CitiesPage({ continent, country }: CitiesPageProps) {
+  console.log(continent, country);
+
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [cities, setCities] = useState<City[]>(citiesData[country] || []);
