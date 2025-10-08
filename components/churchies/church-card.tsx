@@ -60,7 +60,9 @@ export function ChurchCard({
               <h3 className="text-base font-semibold text-foreground mb-0.5 line-clamp-2">
                 {church.name}
               </h3>
-              <p className="text-sm text-muted-foreground">{church.city}</p>
+              <p className="text-sm font-medium text-foreground">
+                {church.responsible}
+              </p>
             </div>
 
             {/* Action Buttons - positioned top right on mobile */}
@@ -98,9 +100,9 @@ export function ChurchCard({
 
             {/* Contact Information - stacked vertically for better mobile display */}
             <div className="space-y-1.5">
-              <p className="text-sm font-medium text-foreground">
+              {/*              <p className="text-sm font-medium text-foreground">
                 {church.responsible}
-              </p>
+              </p> */}
 
               {church.address && (
                 <div className="flex items-start gap-1.5 text-xs text-muted-foreground">

@@ -39,15 +39,15 @@ export function CityCard({
     <Link
       href={`/continents/${continent}/countries/${country}/cities/${city.id}`}
     >
-      <Card className="mb-2 p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+      <Card className="mb-2 max-md:p-2 hover:bg-accent/50 transition-colors cursor-pointer">
         <div className="flex items-start gap-4">
           {/* Location Icon */}
           <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-            <MapPin className="w-7 h-7 text-blue-500" />
+            <MapPin className="w-7 h-7" />
           </div>
 
           {/* Content */}
-          <div className="flex-1 min-w-0 ">
+          <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
                 <h3 className="text-lg font-semibold text-foreground mb-1">
