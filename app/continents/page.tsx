@@ -10,11 +10,7 @@ const ContinentsPage = async () => {
     //return unauthorized();
     redirect("/auth/signin");
   }
-  return (
-    <div>
-      <ContinentsList />
-    </div>
-  );
+  return <ContinentsList />;
 };
 
 export default ContinentsPage;

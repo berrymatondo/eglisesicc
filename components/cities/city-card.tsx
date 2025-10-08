@@ -53,15 +53,43 @@ export function CityCard({
                 <h3 className="text-lg font-semibold text-foreground mb-1">
                   {city.name}
                 </h3>
-                <p className="text-sm text-muted-foreground">{city.country}</p>
+                <p className="flex gap-2 items-center">
+                  <span className="text-2xl font-bold text-foreground mb-1">
+                    {city.churches}
+                  </span>
+                  <span className="text-sm text-muted-foreground">Églises</span>
+                </p>
+                {/*                 <p className="text-sm text-muted-foreground">{city.country}</p>
+                 */}{" "}
               </div>
-              <div className="text-center">
+              {/*                 <div className="w-full flex justify-end items-center gap-2 shrink-0 ml-2">
+               */}{" "}
+              <div className="flex items-center gap-2 shrink-0">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={handleEdit}
+                  className="h-9 w-9 text-muted-foreground hover:text-foreground"
+                >
+                  <Pencil className="h-4 w-4" />
+                </Button>
+
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={handleDelete}
+                  className="h-9 w-9 text-red-500 hover:text-destructive"
+                >
+                  <Trash2 className="h-4 w-4" />
+                </Button>
+              </div>
+              {/* <div className="text-center">
                 <div className="text-2xl font-bold text-foreground mb-1">
                   {city.churches}
                 </div>
                 <div className="text-sm text-muted-foreground">Églises</div>
               </div>
-              {/*               <div className="flex items-center gap-2 shrink-0 ml-2">
+                             <div className="flex items-center gap-2 shrink-0 ml-2">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -91,7 +119,7 @@ export function CityCard({
                 <div className="text-sm text-muted-foreground">Églises</div>
               </div> */}
 
-              <div className="w-full flex justify-end items-center gap-2 shrink-0 ml-2">
+              {/*   <div className="w-full flex justify-end items-center gap-2 shrink-0 ml-2">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -108,7 +136,7 @@ export function CityCard({
                 >
                   <Trash2 className="h-4 w-4" />
                 </Button>
-              </div>
+              </div> */}
               {/*               <div className="text-center">
                 <div className="text-2xl font-bold text-foreground mb-1">
                   {city.departments}

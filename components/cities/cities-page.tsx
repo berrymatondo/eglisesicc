@@ -507,6 +507,10 @@ export function CitiesPage({ continent, country }: CitiesPageProps) {
           </div>
         </div>
 
+        <h2 className="text-3xl font-bold text-foreground mb-4">
+          {country.charAt(0).toUpperCase() + country.slice(1).toLowerCase()}
+        </h2>
+
         {/* Cities List */}
         <div className="space-y-4">
           {filteredCities.length > 0 ? (
