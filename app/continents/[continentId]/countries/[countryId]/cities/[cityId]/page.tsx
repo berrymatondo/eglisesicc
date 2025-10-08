@@ -1,10 +1,9 @@
 import { ChurchesPage } from "@/components/churchies/churches-page";
 
-export default async function CityPage({
-  params,
-}: {
-  params: { continent: string; countryId: string; cityId: string };
-}) {
+type CityPageProps = {
+  params: Promise<{ continent: string; countryId: string; cityId: string }>;
+};
+export default async function CityPage({ params }: CityPageProps) {
   const { continent } = await params;
   const { countryId } = await params;
   const { cityId } = await params;
