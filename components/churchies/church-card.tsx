@@ -71,7 +71,7 @@ export function ChurchCard({
                 variant="ghost"
                 size="icon"
                 onClick={handleEdit}
-                className="h-8 w-8 text-muted-foreground hover:text-foreground"
+                className="h-9 w-9 text-muted-foreground hover:text-foreground"
               >
                 <Pencil className="h-4 w-4" />
               </Button>
@@ -79,7 +79,7 @@ export function ChurchCard({
                 variant="ghost"
                 size="icon"
                 onClick={handleDelete}
-                className="h-8 w-8 text-muted-foreground hover:text-destructive"
+                className="h-9 w-9 text-red-500 hover:text-destructive"
               >
                 <Trash2 className="h-4 w-4" />
               </Button>
@@ -133,7 +133,7 @@ export function ChurchCard({
               variant="ghost"
               size="icon"
               onClick={handleEdit}
-              className="h-8 w-8 text-muted-foreground hover:text-foreground"
+              className="h-9 w-9 text-muted-foreground hover:text-foreground"
             >
               <Pencil className="h-4 w-4" />
             </Button>
@@ -141,7 +141,7 @@ export function ChurchCard({
               variant="ghost"
               size="icon"
               onClick={handleDelete}
-              className="h-8 w-8 text-muted-foreground hover:text-destructive"
+              className=" text-red-500 h-9 w-9 hover:text-destructive"
             >
               <Trash2 className="h-4 w-4" />
             </Button>

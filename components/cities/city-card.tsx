@@ -47,9 +47,9 @@ export function CityCard({
           </div>
 
           {/* Content */}
-          <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex-1">
+          <div className=" flex-1 min-w-0">
+            <div className="flex items-start justify-between">
+              <div className="flex-1 ">
                 <h3 className="text-lg font-semibold text-foreground mb-1">
                   {city.name}
                 </h3>

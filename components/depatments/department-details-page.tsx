@@ -243,32 +243,44 @@ export function DepartmentDetailsPage({
           <h2 className="text-2xl font-bold mb-4">
             Informations du Département
           </h2>
-          <Card className="p-6 space-y-6">
+          <Card className="p-4 space-y-6">
             {/* Department Name */}
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">
                 Nom du Département
               </p>
               <p className="text-lg font-semibold">{department.name}</p>
+              <div className="border-t border-border" />
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">Acronyme</p>
+                <p className="text-lg font-semibold">{department.acronym}</p>
+              </div>
+              <div className="border-t border-border" />
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">
+                  Email du Département
+                </p>
+                <p className="text-lg font-semibold">{department.email}</p>
+              </div>
             </div>
 
-            <div className="border-t border-border" />
-
+            {/*             <div className="border-t border-border" />
+             */}
             {/* Acronym */}
-            <div className="space-y-2">
+            {/*             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">Acronyme</p>
               <p className="text-lg font-semibold">{department.acronym}</p>
             </div>
-
-            <div className="border-t border-border" />
-
+ */}
+            {/*             <div className="border-t border-border" />
+             */}
             {/* Department Email */}
-            <div className="space-y-2">
+            {/*             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">
                 Email du Département
               </p>
               <p className="text-lg font-semibold">{department.email}</p>
-            </div>
+            </div> */}
 
             <div className="border-t border-border" />
 
@@ -296,7 +308,7 @@ export function DepartmentDetailsPage({
                       window.open(`tel:${department.responsible.phone}`)
                     }
                   >
-                    <Phone className="h-5 w-5" />
+                    <Phone className="h-9 w-9" />
                   </Button>
                   <Button
                     variant="ghost"
@@ -306,7 +318,7 @@ export function DepartmentDetailsPage({
                       window.open(`mailto:${department.responsible.email}`)
                     }
                   >
-                    <Mail className="h-5 w-5" />
+                    <Mail className="h-9 w-9" />
                   </Button>
                 </div>
               </div>
@@ -411,7 +423,7 @@ export function DepartmentDetailsPage({
                 key={pole.id}
                 href={`/pole/${continent}/${country}/${city}/${church}/${departmentId}/${pole.id}`}
               >
-                <Card className="p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+                <Card className="mb-2 p-4 hover:bg-accent/50 transition-colors cursor-pointer">
                   <div className="flex items-center justify-between">
                     <p className="text-lg font-medium">{pole.name}</p>
                     <div className="flex items-center gap-2">

@@ -43,8 +43,8 @@ export function DepartmentCard({
     <Link
       href={`/continents/${continent}/countries/${country}/cities/${city}/churches/${church}/departments/${department.id}`}
     >
-      <Card className="mb-2 p-4 hover:bg-accent/50 transition-colors cursor-pointer">
-        <div className="flex items-center gap-4">
+      <Card className="mb-2 p-2 hover:bg-accent/50 transition-colors cursor-pointer">
+        <div className="flex items-start gap-4">
           {/* Icon Placeholder */}
           <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center shrink-0">
             <span className="text-2xl text-muted-foreground">📋</span>
@@ -61,10 +61,31 @@ export function DepartmentCard({
             <p className="text-sm text-muted-foreground">
               Responsable: {department.responsible}
             </p>
+
+            <div className="flex justify-end items-center gap-2 shrink-0 mt-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={handleEdit}
+                className="h-9 w-9 text-muted-foreground hover:text-foreground"
+              >
+                <Pencil className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={handleDelete}
+                className="h-9 w-9 text-red-500 hover:text-destructive"
+              >
+                <Trash2 className="h-4 w-4" />
+              </Button>
+              {/*               <ChevronRight className="h-9 w-9 text-red-500 ml-2" />
+               */}{" "}
+            </div>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-2 shrink-0">
+          {/*           <div className="flex items-center gap-2 shrink-0">
             <Button
               variant="ghost"
               size="icon"
@@ -82,7 +103,7 @@ export function DepartmentCard({
               <Trash2 className="h-4 w-4" />
             </Button>
             <ChevronRight className="h-5 w-5 text-muted-foreground ml-2" />
-          </div>
+          </div> */}
         </div>
       </Card>
     </Link>

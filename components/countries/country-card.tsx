@@ -74,7 +74,7 @@ export function CountryCard({
               variant="ghost"
               size="icon"
               onClick={handleDelete}
-              className="h-9 w-9 text-muted-foreground hover:text-destructive"
+              className="h-9 w-9  text-red-500  hover:text-destructive"
             >
               <Trash2 className="h-4 w-4" />
             </Button>
